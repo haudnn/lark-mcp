@@ -12,4 +12,4 @@ COPY package*.json ./
 RUN npm ci --omit=dev --ignore-scripts
 COPY --from=builder /app/dist ./dist
 ENV NODE_ENV=production
-ENTRYPOINT ["node", "dist/cli.js", "mcp"]
+ENTRYPOINT ["node", "dist/cli.js", "mcp", "--mode", "http"]
